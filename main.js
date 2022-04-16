@@ -34,3 +34,15 @@ function gamestart() {
     let c2 = ccstr.indexOf("png");
     let cp = ccstr.slice(c1+1, c2-1); //computerpick
 }
+
+function convertType(pick) {
+  if(pick == "scissor"){
+    return 0;
+  }
+  else if (pick == "rock") {
+    return 1;
+  }
+  else{
+    return 2;
+  }
+}
