@@ -16,3 +16,13 @@ let timerId = setTimeout(function tick() {
   showImage();
   timerId = setTimeout(tick, 1000); 
 },1000);
+
+function gamestart() {
+  // step1. 유저가 누르면 눌렀을 때의 이미지가 유저의 선택이 됨
+  let uc = document.getElementById("randomimg")
+  let ucstr = uc.src;
+  let u1 = ucstr.lastIndexOf("/");
+  let u2 = ucstr.indexOf("png");
+  let up = ucstr.slice(u1+1, u2-1); //userpick
+
+}
