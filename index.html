@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가위바위보 게임</title>
+  <link rel="stylesheet" href="./main.css">
+  <script defer src="./main.js"></script>
+</head>
+<body>
+
+  <div class="gamename">
+    <p>가위 바위 보 게임</p>
+  </div>
+
+  <div class="wrapper" >
+    <div class="player">
+      <div class="playeruser">
+        <p>사용자</p>
+      </div>
+      <div class="playercom">
+        <p>컴퓨터</p>
+      </div>
+    </div>
+    <div class="game">
+      <div class="random">
+        <img id="randomimg" src="rock.png" alt="가위바위보">
+      </div>
+
+      <div class="com">
+        <img id="comimg"src="scissor.png" alt="가위바위보">
+      </div>
+
+    </div>
+ 
+
+    <div class="score">
+      <div id="user">
+        0
+      </div>
+      :
+      <div id="computer">
+        0
+      </div>
+    </div>
+      <div class="button">
+        <button class="w-btn-outline w-btn-yellow-outline" id="mybutton">RESET</button>
+    </div>
+  </div>
+</body>
+</html>
