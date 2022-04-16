@@ -25,4 +25,12 @@ function gamestart() {
   let u2 = ucstr.indexOf("png");
   let up = ucstr.slice(u1+1, u2-1); //userpick
 
+    // step2. 유저의 선택이 끝나면 랜덤하게 컴퓨터도 하나 고름
+    let imgNum = Math.round(Math.random()*2);
+    let cc = document.getElementById("comimg");
+    comimg.src = imgArray[imgNum];
+    let ccstr = cc.src;
+    let c1 = ccstr.lastIndexOf("/");
+    let c2 = ccstr.indexOf("png");
+    let cp = ccstr.slice(c1+1, c2-1); //computerpick
 }
