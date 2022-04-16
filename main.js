@@ -33,7 +33,14 @@ function gamestart() {
     let c1 = ccstr.lastIndexOf("/");
     let c2 = ccstr.indexOf("png");
     let cp = ccstr.slice(c1+1, c2-1); //computerpick
+
+    // step3. 유저와 컴퓨터의 승부를 가려서 점수를 표시
+    up = convertType(up);
+    cp = convertType(cp);
+    match(up, cp);
 }
+userpick = document.getElementById("randomimg");
+userpick.addEventListener("click", gamestart);
 
 function convertType(pick) {
   if(pick == "scissor"){
