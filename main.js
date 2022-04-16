@@ -11,3 +11,8 @@ function showImage() {
 }
 
 showImage();
+
+let timerId = setTimeout(function tick() {
+  showImage();
+  timerId = setTimeout(tick, 1000); 
+},1000);
