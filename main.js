@@ -76,3 +76,14 @@ function match(up, cp) {
   compoint.innerHTML = cpt;
   
 }
+
+//버튼을 누르면 점수가 0 : 0으로  초기화
+function setInitialization() {
+  let userscore = document.getElementById("user");
+  let comscore = document.getElementById("computer");
+  userscore.innerHTML = 0;
+  comscore.innerHTML = 0;
+}
+
+mybutton = document.getElementById("mybutton")
+mybutton.addEventListener("click", setInitialization)
