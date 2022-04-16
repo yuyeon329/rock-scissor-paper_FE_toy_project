@@ -1,0 +1,113 @@
+body {
+  background-color: bisque;
+  padding: 30px;
+}
+
+.gamename {
+
+  width: 300px;
+  font-size: 35px;
+  font-weight: 800;
+  text-align: center;
+  margin: auto;
+}
+
+.wrapper {
+  background-color: Plum;
+  border: solid;
+  padding: 20px;
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.player {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.playeruser {
+  font-weight: 600;
+  font-size: 30px;
+  margin-right: 20px;
+}
+
+.playercom {
+  font-weight: 600;
+  font-size: 30px;
+  margin-left: 20px;
+}
+
+.game {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.random {
+  width: 100px;
+  margin: 10px;
+}
+
+.random #randomimg {
+  width: 100px;
+}
+
+.com {
+  width: 100px;
+  margin: 10px;
+}
+
+.com #comimg {
+  width: 100px;
+}
+
+.score {
+  width: 100px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30px;
+}
+
+#user {
+  display: inline;
+}
+
+#computer {
+  display: inline;
+}
+
+.button {
+  /* background-color: blue; */
+  margin: 40px;
+}
+
+button {
+  width: 100px;
+  height: 30px;
+  margin: auto;
+  display: block;
+  background: whitesmoke;
+}
+
+.w-btn-outline {
+  border-radius: 15px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.w-btn-yellow-outline {
+  border: 3px solid #fce205;
+  color: #6e6e6e;
+}
+
+.w-btn-yellow-outline:hover {
+  background-color: #fce205;
+  color: #6e6e6e;
+}
