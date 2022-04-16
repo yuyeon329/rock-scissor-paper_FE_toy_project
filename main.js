@@ -46,3 +46,26 @@ function convertType(pick) {
     return 2;
   }
 }
+
+function match(up, cp) {
+  let userpoint = document.getElementById("user");
+  let compoint = document.getElementById("computer");
+
+  let upt = Number(userpoint.innerHTML);
+  let cpt = Number(compoint.innerHTML);
+  if(up == cp) {
+    return;
+  }
+  else{
+    if(up == 2){ //유저가 보
+      (cp == 1) ? upt+=1 : cpt+=1; //컴퓨터가 바위면 유저 승 컴퓨터가 가위면 컴퓨터 승
+    }else if(up == 1) { //유저가 바위
+      (cp == 0) ? upt+=1 : cpt +=1; //컴퓨터가 가위면 유저가 승 컴퓨터가 보면 컴퓨터 승
+    }else{ // 유저가 가위
+      (cp == 2) ? upt+=1 : cpt += 1; //컴퓨터가 보면 유저 승 컴퓨터가 바위면 컴퓨터 승
+    }
+  }
+  userpoint.innerHTML = upt;
+  compoint.innerHTML = cpt;
+  
+}
