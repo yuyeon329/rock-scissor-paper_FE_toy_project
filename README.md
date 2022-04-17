@@ -13,4 +13,4 @@
 - javascript
 ---
 ### 가위바위보 게임 링크
-[게임링크] : [https://leafy-biscotti-76779e.netlify.app/]
+[게임링크] : (https://leafy-biscotti-76779e.netlify.app/)
