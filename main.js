@@ -48,7 +48,7 @@ function gamestart() {
     //showImage() 3초 후 재개
     setTimeout(()=>{
       timerId = setInterval(showImage,1000);
-    },3000);
+    },2000);
 
 }
 userpick = document.getElementById("randomimg");
@@ -77,47 +77,91 @@ function convertType(pick) {
   }
 }
 
+let gResult = document.getElementById("gameResult")
+
 function match(up, cp) {
   let userpoint = document.getElementById("user");
   let compoint = document.getElementById("computer");
-  let gResult = document.getElementById("gameResult")
+
   let upt = Number(userpoint.innerHTML);
   let cpt = Number(compoint.innerHTML);
   if(up == cp) {
-    gResult.innerHTML = "Draw!"
+    setTimeout(()=>{
+      gResult.innerHTML = "Draw!"
+    },0);
+
+    setTimeout(()=>{
+      gResult.innerHTML = ""
+    },1000);
     return;
   }
   else{
     if(up == 2){ //유저가 보
       //컴퓨터가 바위면 유저 승 컴퓨터가 가위면 컴퓨터 승
       if(cp==1){
-        gResult.innerHTML = "You Win!"
         upt+=1
+        setTimeout(()=>{
+          gResult.innerHTML = "You Win!"
+        },0);
+  
+        setTimeout(()=>{
+          gResult.innerHTML = ""
+        },1000);
       }
       else{
-        gResult.innerHTML = "You Lose!"
         cpt+=1
+        setTimeout(()=>{
+          gResult.innerHTML = "You Lose!"
+        },0);
+  
+        setTimeout(()=>{
+          gResult.innerHTML = ""
+        },1000);
       }
 
     }else if(up == 1) { //유저가 바위
       //컴퓨터가 가위면 유저가 승 컴퓨터가 보면 컴퓨터 승
       if(cp == 0){
-        gResult.innerHTML = "You Win!"
         upt+=1  
+        setTimeout(()=>{
+          gResult.innerHTML = "You Win!"
+        },0);
+  
+        setTimeout(()=>{
+          gResult.innerHTML = ""
+        },1000);
       } 
       else{
-        gResult.innerHTML = "You Lose!"
         cpt +=1
+        setTimeout(()=>{
+          gResult.innerHTML = "You Lose!"
+        },0);
+  
+        setTimeout(()=>{
+          gResult.innerHTML = ""
+        },1000);
       }
     }else{ // 유저가 가위
       //컴퓨터가 보면 유저 승 컴퓨터가 바위면 컴퓨터 승
       if(cp == 2){
-        gResult.innerHTML = "You Win!"
         upt+=1
+        setTimeout(()=>{
+          gResult.innerHTML = "You Win!"
+        },0);
+  
+        setTimeout(()=>{
+          gResult.innerHTML = ""
+        },1000);
       }
       else{
-        gResult.innerHTML = "You Lose!"
         cpt += 1
+        setTimeout(()=>{
+          gResult.innerHTML = "You Lose!"
+        },0);
+  
+        setTimeout(()=>{
+          gResult.innerHTML = ""
+        },1000);
       }
     }
   }
@@ -139,12 +183,9 @@ function setInitialization() {
   userscore.innerHTML = 0;
   comscore.innerHTML = 0;
 
-
-  setTimeout(()=>window.location.reload(),3500);
-
   let timerInterval
   Swal.fire({
-    title: '3초 뒤에 게임이 시작됩니다!',
+    title: '3초 뒤에 게임이 다시 시작됩니다!',
     timer: 3000,
     timerProgressBar: true,
     didOpen: () => {
