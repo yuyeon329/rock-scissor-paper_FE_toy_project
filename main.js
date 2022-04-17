@@ -122,6 +122,11 @@ function match(up, cp) {
     }
   }
 
+  if(upt>99 || cpt>99){
+    let score = document.querySelector(".score")
+    score.classList.add("smaller");
+  }
+
   userpoint.innerHTML = upt;
   compoint.innerHTML = cpt;
   

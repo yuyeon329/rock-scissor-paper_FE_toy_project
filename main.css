@@ -75,6 +75,10 @@ body {
   font-size: 30px;
 }
 
+.score.smaller {
+  font-size: 25px;
+}
+
 #user {
   display: inline;
 }
