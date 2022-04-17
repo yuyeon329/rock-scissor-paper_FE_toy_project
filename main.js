@@ -12,7 +12,7 @@ function showImage() {
 
 showImage();
 
-let timerId = setTimeout(function tick() {
+var timerId = setTimeout(function tick() {
   showImage();
   timerId = setTimeout(tick, 1000); 
 },1000);
@@ -40,11 +40,11 @@ function gamestart() {
     
     //showImage 멈춘 후 점수 표시
     clearTimeout(timerId);
-    match(up, cp);
-    
+    match(up, cp); 
 }
 userpick = document.getElementById("randomimg");
 userpick.addEventListener("click", gamestart);
+
 
 function convertType(pick) {
   if(pick == "scissor"){
@@ -87,6 +87,7 @@ function setInitialization() {
   let comscore = document.getElementById("computer");
   userscore.innerHTML = 0;
   comscore.innerHTML = 0;
+  window.location.reload()
 }
 
 mybutton = document.getElementById("mybutton")
