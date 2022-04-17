@@ -19,7 +19,7 @@ var timerId = setTimeout(function tick() {
 },1000);
 
 //let timerId = setInterval(showImage,300);
-
+let comborder = document.querySelector(".com");
 function gamestart() {
   // step1. 유저가 누르면 눌렀을 때의 이미지가 유저의 선택이 됨
   let uc = document.getElementById("randomimg")
@@ -49,9 +49,21 @@ function gamestart() {
     setTimeout(()=>{
       timerId = setInterval(showImage,1000);
     },3000);
+
 }
 userpick = document.getElementById("randomimg");
 userpick.addEventListener("click", gamestart);
+
+// 유저가 패를 선택할 때마다 컴퓨터는 무엇을 선택했는지 알아보기 쉽게 테두리 효과 부여
+userpick.addEventListener("click", function(){
+      setTimeout(()=>{
+        comborder.classList.add('clicked');
+      },0);
+
+      setTimeout(()=>{
+        comborder.classList.remove('clicked');
+      },1000);
+})
 
 function convertType(pick) {
   if(pick == "scissor"){

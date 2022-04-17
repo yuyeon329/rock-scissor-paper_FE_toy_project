@@ -46,6 +46,10 @@ body {
   justify-content: center;
 }
 
+.com.clicked {
+  border: solid 3px white;
+}
+
 .random {
   width: 100px;
   margin: 10px;
