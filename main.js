@@ -1,14 +1,4 @@
 // 가위-바위-보 순서대로 보여주는 유저 선택용 가위바위보 이미지
-let gameInfo = 
-`게임 룰
-  1. 1초마다 가위-바위-보 순서로 바뀌는 좌측 이미지를 선택
-  2. 1번의 선택지가 사용자의 패가 됨
-  3. 사용자의 선택이 끝나면 컴퓨터가 랜덤하게 패를 선정
-  4. 둘의 승부를 가려 점수를 집계
-  4-1. 승부를 가린 후엔 3초간 쉬는시간을 가지고 다시 게임이 재개됨
-  5. 하단의 reset 버튼을 누를 경우 점수가 초기화되고 게임이 다시 로딩됨`
-alert(gameInfo)
-
 let imgArray = new Array();
 let imageNum = 0;
 imgArray[0] = "scissor.png";
@@ -82,17 +72,44 @@ function match(up, cp) {
   let upt = Number(userpoint.innerHTML);
   let cpt = Number(compoint.innerHTML);
   if(up == cp) {
+    Swal.fire('Draw!')
     return;
   }
   else{
     if(up == 2){ //유저가 보
-      (cp == 1) ? upt+=1 : cpt+=1; //컴퓨터가 바위면 유저 승 컴퓨터가 가위면 컴퓨터 승
+      //컴퓨터가 바위면 유저 승 컴퓨터가 가위면 컴퓨터 승
+      if(cp==1){
+        Swal.fire('You Win!')
+        upt+=1
+      }
+      else{
+        Swal.fire('You Lose!')
+        cpt+=1
+      }
+
     }else if(up == 1) { //유저가 바위
-      (cp == 0) ? upt+=1 : cpt +=1; //컴퓨터가 가위면 유저가 승 컴퓨터가 보면 컴퓨터 승
+      //컴퓨터가 가위면 유저가 승 컴퓨터가 보면 컴퓨터 승
+      if(cp == 0){
+        Swal.fire('You Win!')
+        upt+=1  
+      } 
+      else{
+        Swal.fire('You Lose!')
+        cpt +=1
+      }
     }else{ // 유저가 가위
-      (cp == 2) ? upt+=1 : cpt += 1; //컴퓨터가 보면 유저 승 컴퓨터가 바위면 컴퓨터 승
+      //컴퓨터가 보면 유저 승 컴퓨터가 바위면 컴퓨터 승
+      if(cp == 2){
+        Swal.fire('You Win!')
+        upt+=1
+      }
+      else{
+        Swal.fire('You Lose!')
+        cpt += 1
+      }
     }
   }
+
   userpoint.innerHTML = upt;
   compoint.innerHTML = cpt;
   
@@ -109,3 +126,17 @@ function setInitialization() {
 
 mybutton = document.getElementById("mybutton")
 mybutton.addEventListener("click", setInitialization)
+
+Swal.fire({
+  icon : 'info',
+  title: '게임 룰',
+  showClass: {
+    popup: 'animate__animated animate__fadeInDown'
+  },
+  hideClass: {
+    popup: 'animate__animated animate__fadeOutUp'
+  },
+  html :  
+  "좌측 이미지는 가위,바위,보 순서로 1초마다 바뀝니다.<br>사용자는 좌측 이미지를 눌러 패를 선택합니다.<br>사용자의 선택이 끝나면 컴퓨터가 패를 정합니다.<br>둘의 승부를 가려 점수를 집계합니다.<br>승부를 가린 후엔 3초간 쉬는시간을 가지고 다시 게임이 재개됩니다.<br>reset 버튼을 누르면 점수가 초기화되고 게임이 다시 로딩됩니다.",
+  
+})
