@@ -133,7 +133,30 @@ function setInitialization() {
   let comscore = document.getElementById("computer");
   userscore.innerHTML = 0;
   comscore.innerHTML = 0;
-  window.location.reload()
+
+
+  setTimeout(()=>window.location.reload(),4000);
+
+  let timerInterval
+  Swal.fire({
+    title: '3초 뒤에 게임이 시작됩니다!',
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: () => {
+      Swal.showLoading()
+      const b = Swal.getHtmlContainer().querySelector('b')
+      timerInterval = setInterval(() => {
+        b.textContent = Swal.getTimerLeft()
+      }, 100)
+    },
+    willClose: () => {
+      clearInterval(timerInterval)
+    }
+  }).then((result) => {
+    if (result.dismiss === Swal.DismissReason.timer) {
+      console.log('I was closed by the timer')
+    }
+  })
 }
 
 mybutton = document.getElementById("mybutton")
