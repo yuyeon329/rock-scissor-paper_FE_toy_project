@@ -44,7 +44,6 @@ body {
   padding: 20px;
   display: flex;
   justify-content: center;
-
 }
 
 .random {
@@ -80,9 +79,22 @@ body {
   display: inline;
 }
 
+.gameResult {
+  width: 200px;
+  height: 50px;
+  margin: auto;
+  margin-top: 5px;
+  text-align: center;
+}
+
+#gameResult {
+  font-size: 30px;
+  font-weight: 400;
+}
+
 .button {
   /* background-color: blue; */
-  margin: 40px;
+  margin: 5px;
 }
 
 button {

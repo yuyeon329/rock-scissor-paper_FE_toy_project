@@ -68,43 +68,43 @@ function convertType(pick) {
 function match(up, cp) {
   let userpoint = document.getElementById("user");
   let compoint = document.getElementById("computer");
-
+  let gResult = document.getElementById("gameResult")
   let upt = Number(userpoint.innerHTML);
   let cpt = Number(compoint.innerHTML);
   if(up == cp) {
-    Swal.fire('Draw!')
+    gResult.innerHTML = "Draw!"
     return;
   }
   else{
     if(up == 2){ //유저가 보
       //컴퓨터가 바위면 유저 승 컴퓨터가 가위면 컴퓨터 승
       if(cp==1){
-        Swal.fire('You Win!')
+        gResult.innerHTML = "You Win!"
         upt+=1
       }
       else{
-        Swal.fire('You Lose!')
+        gResult.innerHTML = "You Lose!"
         cpt+=1
       }
 
     }else if(up == 1) { //유저가 바위
       //컴퓨터가 가위면 유저가 승 컴퓨터가 보면 컴퓨터 승
       if(cp == 0){
-        Swal.fire('You Win!')
+        gResult.innerHTML = "You Win!"
         upt+=1  
       } 
       else{
-        Swal.fire('You Lose!')
+        gResult.innerHTML = "You Lose!"
         cpt +=1
       }
     }else{ // 유저가 가위
       //컴퓨터가 보면 유저 승 컴퓨터가 바위면 컴퓨터 승
       if(cp == 2){
-        Swal.fire('You Win!')
+        gResult.innerHTML = "You Win!"
         upt+=1
       }
       else{
-        Swal.fire('You Lose!')
+        gResult.innerHTML = "You Lose!"
         cpt += 1
       }
     }
@@ -129,14 +129,12 @@ mybutton.addEventListener("click", setInitialization)
 
 Swal.fire({
   icon : 'info',
-  title: '게임 룰',
+  title: '왼쪽의 이미지를 눌러서 컴퓨터와 겨뤄보세요!',
   showClass: {
     popup: 'animate__animated animate__fadeInDown'
   },
   hideClass: {
     popup: 'animate__animated animate__fadeOutUp'
   },
-  html :  
-  "좌측 이미지는 가위,바위,보 순서로 1초마다 바뀝니다.<br>사용자는 좌측 이미지를 눌러 패를 선택합니다.<br>사용자의 선택이 끝나면 컴퓨터가 패를 정합니다.<br>둘의 승부를 가려 점수를 집계합니다.<br>승부를 가린 후엔 3초간 쉬는시간을 가지고 다시 게임이 재개됩니다.<br>reset 버튼을 누르면 점수가 초기화되고 게임이 다시 로딩됩니다.",
   
 })
