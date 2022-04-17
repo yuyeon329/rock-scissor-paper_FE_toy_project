@@ -37,7 +37,11 @@ function gamestart() {
     // step3. 유저와 컴퓨터의 승부를 가려서 점수를 표시
     up = convertType(up);
     cp = convertType(cp);
+    
+    //showImage 멈춘 후 점수 표시
+    clearTimeout(timerId);
     match(up, cp);
+    
 }
 userpick = document.getElementById("randomimg");
 userpick.addEventListener("click", gamestart);
