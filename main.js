@@ -14,8 +14,10 @@ showImage();
 
 var timerId = setTimeout(function tick() {
   showImage();
-  timerId = setTimeout(tick, 1000); 
-},1000);
+  timerId = setTimeout(tick, 300); 
+},300);
+
+//let timerId = setInterval(showImage,300);
 
 function gamestart() {
   // step1. 유저가 누르면 눌렀을 때의 이미지가 유저의 선택이 됨
@@ -40,11 +42,15 @@ function gamestart() {
     
     //showImage 멈춘 후 점수 표시
     clearTimeout(timerId);
-    match(up, cp); 
+    match(up, cp);
+
+    //showImage() 3초 후 재개
+    setTimeout(()=>{
+      timerId = setInterval(showImage,300);
+    },3000);
 }
 userpick = document.getElementById("randomimg");
 userpick.addEventListener("click", gamestart);
-
 
 function convertType(pick) {
   if(pick == "scissor"){
