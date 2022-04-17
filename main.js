@@ -135,7 +135,7 @@ function setInitialization() {
   comscore.innerHTML = 0;
 
 
-  setTimeout(()=>window.location.reload(),4000);
+  setTimeout(()=>window.location.reload(),3500);
 
   let timerInterval
   Swal.fire({
