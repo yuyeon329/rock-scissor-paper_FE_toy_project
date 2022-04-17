@@ -1,13 +1,17 @@
-// 랜덤하게 바뀌어서 유저가 누르길 기다리는 가위바위보 이미지
+// 가위-바위-보 순서대로 보여주는 유저 선택용 가위바위보 이미지
 let imgArray = new Array();
-imgArray[0] = "rock.png";
-imgArray[1] = "scissor.png";
+let imageNum = 0;
+imgArray[0] = "scissor.png";
+imgArray[1] = "rock.png";
 imgArray[2] = "paper.png";
 
 function showImage() {
-  let imgNum = Math.round(Math.random()*2);
+  if(imageNum>2){
+    imageNum=0;
+  }
   let orgImg = document.getElementById("randomimg");
-  orgImg.src = imgArray[imgNum];
+  orgImg.src = imgArray[imageNum];
+  imageNum++;
 }
 
 showImage();
