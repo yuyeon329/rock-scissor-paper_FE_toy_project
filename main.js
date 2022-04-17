@@ -6,11 +6,8 @@ imgArray[1] = "rock.png";
 imgArray[2] = "paper.png";
 
 function showImage() {
-  if(imageNum>2){
-    imageNum=0;
-  }
   let orgImg = document.getElementById("randomimg");
-  orgImg.src = imgArray[imageNum];
+  orgImg.src = imgArray[imageNum%3];
   imageNum++;
 }
 
