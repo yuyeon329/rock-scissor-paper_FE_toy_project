@@ -14,8 +14,8 @@ showImage();
 
 var timerId = setTimeout(function tick() {
   showImage();
-  timerId = setTimeout(tick, 600); 
-},600);
+  timerId = setTimeout(tick, 1000); 
+},1000);
 
 //let timerId = setInterval(showImage,300);
 
@@ -46,7 +46,7 @@ function gamestart() {
 
     //showImage() 3초 후 재개
     setTimeout(()=>{
-      timerId = setInterval(showImage,600);
+      timerId = setInterval(showImage,1000);
     },3000);
 }
 userpick = document.getElementById("randomimg");
