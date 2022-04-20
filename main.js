@@ -185,20 +185,22 @@ function setInitialization() {
 
   let timerInterval
   Swal.fire({
-    title: '3초 뒤에 게임이 다시 시작됩니다!',
+    title: '게임이 다시 시작됩니다!',
+    html: '게임이 <b></b>초 뒤에 시작됩니다!',
     timer: 3000,
     timerProgressBar: true,
     didOpen: () => {
       Swal.showLoading()
       const b = Swal.getHtmlContainer().querySelector('b')
       timerInterval = setInterval(() => {
-        b.textContent = Swal.getTimerLeft()
+        b.textContent = parseInt(Swal.getTimerLeft()/1000)
       }, 100)
     },
     willClose: () => {
       clearInterval(timerInterval)
     }
   }).then((result) => {
+    /* Read more about handling dismissals below */
     if (result.dismiss === Swal.DismissReason.timer) {
       console.log('I was closed by the timer')
     }
@@ -216,6 +218,6 @@ Swal.fire({
   },
   hideClass: {
     popup: 'animate__animated animate__fadeOutUp'
-  },
+  }
   
 })
